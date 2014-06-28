@@ -36,3 +36,9 @@ addNode x (Node h left value right)
 height :: Tree a -> Integer
 height Leaf = -1
 height (Node h _ _ _) = h
+
+xor :: [Bool] -> Bool
+xor = odd . foldr (\x y -> if x then (y + 1) else y) 0
+
+map' ::  (a -> b) -> [a] -> [b] 
+map' f  = foldr (\x l -> f x : l) []
